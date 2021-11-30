@@ -51,8 +51,12 @@ namespace BestBuyBestPractices
             {
                 Console.WriteLine(item.Name);
                 Console.WriteLine(item.Price);
+                Console.WriteLine(item.ProductID);
             }
+            Console.WriteLine("What is the productID that you would like to delete?");
+            var input = Convert.ToInt32(Console.ReadLine());
 
+            productRepo.DeleteProduct(input);
         }
     }
 }

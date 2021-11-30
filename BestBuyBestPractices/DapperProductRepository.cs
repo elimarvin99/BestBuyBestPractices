@@ -27,6 +27,7 @@ namespace BestBuyBestPractices
             _connection.Execute("UPDATE products (Name, Price, CategoryID) " +
                                 "SET (@name = name, @price = price, @categoryID = categoryid)  WHERE PRODUCTS.NAME = NAME;"
                 , new { name = name, price = price, categoryID = categoryID });
+            Console.WriteLine($"{name} UPDATED.");
         }
         public void DeleteProduct(int productID)
         {
@@ -38,6 +39,7 @@ namespace BestBuyBestPractices
 
             _connection.Execute("DELETE FROM products WHERE ProductID = @productID;",
                new { productID = productID });
+            Console.WriteLine($"Product #{productID} DELETED");
         }
 
         public IEnumerable<Product> GetAllProducts()

@@ -8,5 +8,7 @@ namespace BestBuyBestPractices
     {
         IEnumerable<Product> GetAllProducts(); //Stubbed out method
         public void CreateProduct(string name, double price, int categoryID);
+        public void UpdateProduct(string name, double price, int categoryID);
+        public void DeleteProduct(int productID);
     }
 }
